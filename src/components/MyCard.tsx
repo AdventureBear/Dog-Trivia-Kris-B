@@ -1,7 +1,8 @@
 import { Card, CardBody, CardImg, CardTitle } from "reactstrap";
 import ButtonGroup from "./ButtonGroup";
-import { breedImageArr } from "../data/gameData.js";
+import { breedDataObj } from "../data/gameData.js";
 
+// index passed in from <My Card /> App component
 interface Props {
   index: number;
 }
@@ -16,7 +17,7 @@ function MyCard({ index }: Props) {
           <CardTitle tag="h5">Name That Breed</CardTitle>
         </CardBody>
         <CardImg
-          src={breedImageArr[index]}
+          src={breedDataObj[index].imagePath}
           alt="image"
           style={{ width: "100%" }}
         />
@@ -29,7 +30,7 @@ function MyCard({ index }: Props) {
         </CardBody>
         <CardBody>
           <div>
-            <ButtonGroup />
+            <ButtonGroup index={index} />
             {/* <ListGroup items={items} onSelectedItem={handleSelectedItem} /> */}
           </div>
         </CardBody>

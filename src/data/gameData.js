@@ -9,31 +9,40 @@ export const breedDataObj = [
     },
     { questionId: 2, 
       imagePath: "../images/2_great_dane.jpg", 
-      correct: "Great Dane"
+      correct: "Great Dane",
+      incorrect1: "Maltese",
+      incorrect2: "Labrador",
+      incorrect3: "Chihuahua"
     },
     {
       questionId: 3,
       imagePath: "../images/3_beagle.jpg",
-      correct: "Beagle"
+      correct: "Beagle",
+      incorrect1: "Maltese",
+      incorrect2: "Labrador",
+      incorrect3: "Chihuahua"
     },
     {
       questionId: 4,
       imagePath: "../images/4_gsd.png",
-      correct: "German Shepherd Dog"
+      correct: "German Shepherd Dog",
+      incorrect1: "Maltese",
+      incorrect2: "Labrador",
+      incorrect3: "Chihuahua"
     },
   ];
 
-  export const breedImageArr = [
-    "../images/1_shih_tzu.jpg",
-    "../images/2_great_dane.jpg",
-    "../images/3_beagle.jpg",
-    "../images/4_gsd.png"
-  ]
+  // export const breedImageArr = [
+  //   "../images/1_shih_tzu.jpg",
+  //   "../images/2_great_dane.jpg",
+  //   "../images/3_beagle.jpg",
+  //   "../images/4_gsd.png"
+  // ]
 
-  export const breedNameArr = [
-    "Shih Tzu",
-    "Great Dane",
-    "Beagle",
-    "German Shepherd Dog"
-  ]
+  // export const breedNameArr = [
+  //   "Shih Tzu",
+  //   "Great Dane",
+  //   "Beagle",
+  //   "German Shepherd Dog"
+  // ]
   
