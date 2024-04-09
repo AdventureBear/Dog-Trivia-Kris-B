@@ -1,5 +1,5 @@
 import { Card, CardBody, CardImg, CardTitle } from "reactstrap";
-import ButtonGroup from "./ButtonGroup";
+import ButtonGroup from "./ButtonGroup.js";
 import { breedDataObj } from "../data/gameData.js";
 
 // index passed in from <My Card /> App component
@@ -7,7 +7,7 @@ interface Props {
   index: number;
 }
 
-function MyCard({ index }: Props) {
+function QuestionCard({ index }: Props) {
   const handleSelectedItem = (item: string) => console.log(item);
 
   return (
@@ -48,4 +48,4 @@ function MyCard({ index }: Props) {
   );
 }
 
-export default MyCard;
+export default QuestionCard;

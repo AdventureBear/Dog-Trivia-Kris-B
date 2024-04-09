@@ -1,5 +1,4 @@
-// import BreedInfo from "./components/BreedInfo";
-import MyCard from "./components/MyCard";
+import MyCard from "./components/QuestionCard";
 
 function App() {
   return (
