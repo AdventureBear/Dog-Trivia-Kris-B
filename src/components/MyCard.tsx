@@ -1,34 +1,39 @@
 import { Card, CardBody, CardImg, CardTitle } from "reactstrap";
-import puppy from "../images/gold_pup.jpg";
+import ButtonGroup from "./ButtonGroup";
+import { breedImageArr } from "../data/gameData.js";
 
-const MyCard = () => {
+interface Props {
+  index: number;
+}
+
+function MyCard({ index }: Props) {
+  const handleSelectedItem = (item: string) => console.log(item);
+
   return (
     <div className="d-flex justify-content-center p-2">
       <Card style={{ width: "30rem" }}>
         <CardBody>
-          <CardTitle tag="h5">Card title</CardTitle>
+          <CardTitle tag="h5">Name That Breed</CardTitle>
         </CardBody>
         <CardImg
-          // className="card-img-top"
-          src={puppy}
+          src={breedImageArr[index]}
           alt="image"
           style={{ width: "100%" }}
         />
+
         <CardBody>
-          <h5 className="card-title">Card title</h5>
+          {/* <h5 className="card-title">Card title</h5> */}
           <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            What is the name of the dog breed pictured above?
           </p>
         </CardBody>
         <CardBody>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">An item</li>
-            <li className="list-group-item">A second item</li>
-            <li className="list-group-item">A third item</li>
-            <li className="list-group-item">A fourth item</li>
-          </ul>
+          <div>
+            <ButtonGroup />
+            {/* <ListGroup items={items} onSelectedItem={handleSelectedItem} /> */}
+          </div>
         </CardBody>
+
         <CardBody>
           <a href="#" className="card-link">
             Card link
@@ -40,6 +45,6 @@ const MyCard = () => {
       </Card>
     </div>
   );
-};
+}
 
 export default MyCard;

@@ -1,14 +1,12 @@
 import { useState } from "react";
 
-// object - {items: [], heading: string}
-interface ListGroupProps {
+// object - {items: [], onSelectedItem: function}
+interface Props {
   items: string[];
-  heading: string;
-  // {item: string} => void
   onSelectedItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading, onSelectedItem }: ListGroupProps) {
+function ListGroup({ items, onSelectedItem }: Props) {
   //Hook
   // arr[0]; variable selected index
   // arr[1]; updater function
@@ -16,9 +14,8 @@ function ListGroup({ items, heading, onSelectedItem }: ListGroupProps) {
 
   return (
     <>
-      <h1>{heading}</h1>
       {items.length === 0 && <p>No item found</p>}
-      <ul className="list-group">
+      <ul className="list-group list-group-flush">
         {items.map((item, index) => (
           <li
             className={
