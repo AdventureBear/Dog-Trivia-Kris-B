@@ -1,4 +1,4 @@
-import { Card, CardBody, CardImg, CardTitle } from "reactstrap";
+import { Card, CardBody, CardImg } from "reactstrap";
 import AnswerButtonGroup from "./AnswerButtonGroup.jsx";
 import { breedDataObj } from "../data/gameData.js";
 
@@ -8,14 +8,11 @@ interface Props {
 }
 
 function QuestionCard({ index }: Props) {
-  const handleSelectedItem = (item: string) => console.log(item);
+  // const handleSelectedItem = (item: string) => console.log(item);
 
   return (
     <div className="d-flex justify-content-center p-2">
       <Card style={{ width: "30rem" }}>
-        <CardBody>
-          <CardTitle tag="h5">Name That Breed</CardTitle>
-        </CardBody>
         <CardImg
           src={breedDataObj[index].imagePath}
           alt="image"
@@ -31,6 +28,7 @@ function QuestionCard({ index }: Props) {
         <CardBody>
           <div>
             <AnswerButtonGroup index={index} />
+            {/* <AnswerButtonGroup index={index} /> */}
             {/* <ListGroup items={items} onSelectedItem={handleSelectedItem} /> */}
           </div>
         </CardBody>

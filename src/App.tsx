@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <h1>Name That Breed</h1>
-      <MyCard index={0} />
+      <MyCard index={1} />
     </div>
   );
 }

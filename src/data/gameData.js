@@ -11,9 +11,9 @@ export const breedDataObj = [
     { questionId: 2, 
       imagePath: "../images/2_great_dane.jpg", 
       breedName: "Great Dane",
-      a: "Great Dane",
+      a: "Labrador",
       b: "Maltese",
-      c: "Labrador",
+      c: "Great Dane",
       d: "Chihuahua"
     },
     {
