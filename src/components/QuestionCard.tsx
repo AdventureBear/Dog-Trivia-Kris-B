@@ -1,5 +1,5 @@
 import { Card, CardBody, CardImg, CardTitle } from "reactstrap";
-import ButtonGroup from "./ButtonGroup.js";
+import AnswerButtonGroup from "./AnswerButtonGroup.jsx";
 import { breedDataObj } from "../data/gameData.js";
 
 // index passed in from <My Card /> App component
@@ -30,18 +30,14 @@ function QuestionCard({ index }: Props) {
         </CardBody>
         <CardBody>
           <div>
-            <ButtonGroup index={index} />
+            <AnswerButtonGroup index={index} />
             {/* <ListGroup items={items} onSelectedItem={handleSelectedItem} /> */}
           </div>
         </CardBody>
 
         <CardBody>
-          <a href="#" className="card-link">
-            Card link
-          </a>
-          <a href="#" className="card-link">
-            Another link
-          </a>
+          <button>Previous</button>
+          <button style={{ float: "right" }}>Next</button>
         </CardBody>
       </Card>
     </div>

@@ -1,0 +1,9 @@
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn-group button {
+    margin: 1px 1px 1px 1px;
+    width: 200px;
+}

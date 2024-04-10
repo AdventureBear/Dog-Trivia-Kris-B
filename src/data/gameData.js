@@ -1,34 +1,38 @@
 export const breedDataObj = [
     {
       questionId: 1,
+      breedName: "Shih Tzu",
       imagePath: "../images/1_shih_tzu.jpg",
-      correct: "Shih Tzu",
-      incorrect1: "Maltese",
-      incorrect2: "Great Dane",
-      incorrect3: "Chihuahua"
+      a: "Shih Tzu",
+      b: "Maltese",
+      c: "Great Dane",
+      d: "Chihuahua"
     },
     { questionId: 2, 
       imagePath: "../images/2_great_dane.jpg", 
-      correct: "Great Dane",
-      incorrect1: "Maltese",
-      incorrect2: "Labrador",
-      incorrect3: "Chihuahua"
+      breedName: "Great Dane",
+      a: "Great Dane",
+      b: "Maltese",
+      c: "Labrador",
+      d: "Chihuahua"
     },
     {
       questionId: 3,
       imagePath: "../images/3_beagle.jpg",
-      correct: "Beagle",
-      incorrect1: "Maltese",
-      incorrect2: "Labrador",
-      incorrect3: "Chihuahua"
+      breedName: "Beagle",
+      a: "Beagle",
+      b: "Maltese",
+      c: "Labrador",
+      d: "Chihuahua"
     },
     {
       questionId: 4,
       imagePath: "../images/4_gsd.png",
-      correct: "German Shepherd Dog",
-      incorrect1: "Maltese",
-      incorrect2: "Labrador",
-      incorrect3: "Chihuahua"
+      breedName: "German Shepherd Dog",
+      a: "German Shepherd Dog",
+      b: "Maltese",
+      c: "Labrador",
+      d: "Chihuahua"
     },
   ];
 
