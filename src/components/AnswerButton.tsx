@@ -1,5 +1,7 @@
 import { breedDataObj } from "../data/gameData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+// try adding useEffect to reset the button when the QUESTION index changes
 
 interface Props {
   index: number;
@@ -7,9 +9,9 @@ interface Props {
 }
 
 function AnswerButton({ index, answerIndex }: Props) {
-  let selectedBreedName = "";
-  let correctBreedName = "";
-  let isCorrect = true;
+  // let selectedBreedName = "";
+  // let correctBreedName = "";
+  // let isCorrect = true;
 
   let answers = [
     breedDataObj[index].a,
@@ -20,7 +22,17 @@ function AnswerButton({ index, answerIndex }: Props) {
   const [color, setColor] = useState("white");
   const [bgColor, setBgColor] = useState("purple");
 
+  // when index changes reset button colors
+  useEffect(() => {
+    setBgColor("purple");
+    setColor("white");
+  }, [index]);
+
   const handleClick = (evt: any) => {
+    let selectedBreedName = "";
+    let correctBreedName = "";
+    let isCorrect = true;
+
     selectedBreedName = evt.target.innerText;
     correctBreedName = breedDataObj[index].breedName;
 

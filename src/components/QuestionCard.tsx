@@ -1,6 +1,7 @@
 import { Card, CardBody, CardImg } from "reactstrap";
 import AnswerButtonGroup from "./AnswerButtonGroup.jsx";
 import { breedDataObj } from "../data/gameData.js";
+import NextButton from "./NextButton.js";
 
 // index passed in from <My Card /> App component
 interface Props {
@@ -34,8 +35,9 @@ function QuestionCard({ index }: Props) {
         </CardBody>
 
         <CardBody>
-          <button>Previous</button>
-          <button style={{ float: "right" }}>Next</button>
+          {/* <button>Previous</button> */}
+          {/* <button style={{ float: "right" }}>Next</button> */}
+          {/* <NextButton index={index} /> */}
         </CardBody>
       </Card>
     </div>
