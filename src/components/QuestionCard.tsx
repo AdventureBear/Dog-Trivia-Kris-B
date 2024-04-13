@@ -21,7 +21,6 @@ function QuestionCard({ index }: Props) {
         />
 
         <CardBody>
-          {/* <h5 className="card-title">Card title</h5> */}
           <p className="card-text">
             What is the name of the dog breed pictured above?
           </p>

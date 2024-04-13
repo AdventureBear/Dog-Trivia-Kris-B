@@ -29,8 +29,8 @@ export const breedDataObj = [
       questionId: 4,
       imagePath: "../images/4_gsd.png",
       breedName: "German Shepherd Dog",
-      a: "German Shepherd Dog",
-      b: "Maltese",
+      a: "Golden Retriever",
+      b: "German Shepherd Dog",
       c: "Labrador",
       d: "Chihuahua"
     },

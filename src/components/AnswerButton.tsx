@@ -9,10 +9,6 @@ interface Props {
 }
 
 function AnswerButton({ index, answerIndex }: Props) {
-  // let selectedBreedName = "";
-  // let correctBreedName = "";
-  // let isCorrect = true;
-
   let answers = [
     breedDataObj[index].a,
     breedDataObj[index].b,
@@ -22,16 +18,28 @@ function AnswerButton({ index, answerIndex }: Props) {
   const [color, setColor] = useState("white");
   const [bgColor, setBgColor] = useState("purple");
 
+  const [isButtonDisabled, setButtonDisabled] = useState(false);
+
   // when index changes reset button colors
   useEffect(() => {
     setBgColor("purple");
     setColor("white");
   }, [index]);
 
+  useEffect(() => {
+    setButtonDisabled(false);
+  }, [index]);
+
   const handleClick = (evt: any) => {
     let selectedBreedName = "";
     let correctBreedName = "";
     let isCorrect = true;
+
+    const disableButton = () => {
+      setButtonDisabled(true);
+    };
+
+    console.log(evt);
 
     selectedBreedName = evt.target.innerText;
     correctBreedName = breedDataObj[index].breedName;
@@ -42,11 +50,14 @@ function AnswerButton({ index, answerIndex }: Props) {
 
     setBgColor(isCorrect ? "#33FF00" : "#FF3300"); // green / red
     setColor(isCorrect ? "#336600" : "#990000"); // dark green / dark red
+
+    disableButton();
   };
 
   return (
     <>
       <button
+        disabled={isButtonDisabled}
         style={{ backgroundColor: bgColor, color: color }}
         onClick={handleClick}
       >

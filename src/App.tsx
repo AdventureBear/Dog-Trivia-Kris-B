@@ -17,8 +17,20 @@ function App() {
     <div>
       <h1>Name That Breed</h1>
       <MyCard index={index} />
-      <button onClick={decrementIndex}>Previous</button>
-      <button style={{ float: "right" }} onClick={incrementIndex}>
+      <button
+        disabled={false}
+        id="prev"
+        style={{ marginLeft: "250px" }}
+        onClick={decrementIndex}
+      >
+        Previous
+      </button>
+      <button
+        disabled={false}
+        id="next"
+        style={{ float: "right", marginRight: "250px" }}
+        onClick={incrementIndex}
+      >
         Next
       </button>
     </div>
