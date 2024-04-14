@@ -1,13 +1,9 @@
 import { Card, CardBody, CardImg } from "reactstrap";
-import AnswerButtonGroup from "./AnswerButtonGroup.jsx";
 import { breedDataObj } from "../data/gameData.js";
-import NextButton from "./NextButton.js";
 import { useState } from "react";
-
-// index passed in from <My Card /> App component
-// interface Props {
-//   index: number;
-// }
+import AnswerButtonGroup from "./AnswerButtonGroup.jsx";
+import NextButton from "./NextButton.js";
+import PreviousButton from "./PreviousButton.js";
 
 function QuestionCard() {
   // const handleSelectedItem = (item: string) => console.log(item);
@@ -39,29 +35,13 @@ function QuestionCard() {
         <CardBody>
           <div>
             <AnswerButtonGroup index={index} />
-            {/* <AnswerButtonGroup index={index} /> */}
-            {/* <ListGroup items={items} onSelectedItem={handleSelectedItem} /> */}
           </div>
         </CardBody>
 
         <CardBody>
-          <button
-            disabled={false}
-            id="prev"
-            // style={{ marginLeft: "250px" }}
-            onClick={decrementIndex}
-          >
-            Previous
-          </button>
-          <button
-            disabled={false}
-            id="next"
-            style={{ float: "right" }}
-            onClick={incrementIndex}
-          >
-            Next
-          </button>
-          {/* <NextButton index={index} /> */}
+          <PreviousButton onClick={() => decrementIndex()} />
+          <span>Question #{breedDataObj[index].questionId}</span>
+          <NextButton onClick={() => incrementIndex()} />
         </CardBody>
       </Card>
     </div>

@@ -2,19 +2,19 @@ interface Props {
   onClick: () => void;
 }
 
-function NextButton({ onClick }: Props) {
+function PreviousButton({ onClick }: Props) {
   return (
     <>
       <button
         disabled={false}
-        id="next"
-        style={{ float: "right" }}
+        id="prev"
+        style={{ marginRight: "50px" }}
         onClick={onClick}
       >
-        Next
+        Previous
       </button>
     </>
   );
 }
 
-export default NextButton;
+export default PreviousButton;
