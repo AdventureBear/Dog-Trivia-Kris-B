@@ -3,13 +3,13 @@ import "./AnswerButtonGroup.css";
 import { useEffect, useState } from "react";
 
 interface Props {
-  index: number;
+  questionIndex: number;
 }
 
-function AnswerButtonGroup({ index }: Props) {
+function AnswerButtonGroup({ questionIndex }: Props) {
   const [isButtonDisabled, setButtonDisabled] = useState(false);
 
-  // when index changes reset button colors
+  // when questionIndex changes reset button colors
   useEffect(() => {
     const buttons = document.querySelectorAll("button");
     for (let i = 0; i < buttons.length; i++) {
@@ -17,12 +17,12 @@ function AnswerButtonGroup({ index }: Props) {
         buttons[i].style.backgroundColor = "purple";
       }
     }
-  }, [index]);
+  }, [questionIndex]);
 
-  // when index changes reset disabled to false
+  // when questionIndex changes reset disabled to false
   useEffect(() => {
     setButtonDisabled(false);
-  }, [index]);
+  }, [questionIndex]);
 
   let correctBreedName = "";
   let selectedBreedName = "";
@@ -38,7 +38,7 @@ function AnswerButtonGroup({ index }: Props) {
 
     selectedBreedName = evt.target.innerText;
     activeButton = evt.target.id;
-    correctBreedName = breedDataObj[index].breedName;
+    correctBreedName = breedDataObj[questionIndex].breedName;
 
     selectedBreedName === correctBreedName
       ? (isCorrect = true)
@@ -64,7 +64,7 @@ function AnswerButtonGroup({ index }: Props) {
           id="ansBtnA"
           onClick={handleClick}
         >
-          {breedDataObj[index].a}
+          {breedDataObj[questionIndex].a}
         </button>
         <button
           className="btn"
@@ -73,7 +73,7 @@ function AnswerButtonGroup({ index }: Props) {
           id="ansBtnB"
           onClick={handleClick}
         >
-          {breedDataObj[index].b}
+          {breedDataObj[questionIndex].b}
         </button>
         <button
           className="btn"
@@ -82,7 +82,7 @@ function AnswerButtonGroup({ index }: Props) {
           id="ansBtnC"
           onClick={handleClick}
         >
-          {breedDataObj[index].c}
+          {breedDataObj[questionIndex].c}
         </button>
         <button
           className="btn"
@@ -91,7 +91,7 @@ function AnswerButtonGroup({ index }: Props) {
           id="ansBtnD"
           onClick={handleClick}
         >
-          {breedDataObj[index].d}
+          {breedDataObj[questionIndex].d}
         </button>
       </div>
     </>
@@ -101,7 +101,7 @@ function AnswerButtonGroup({ index }: Props) {
 export default AnswerButtonGroup;
 
 // option 2 - individual component buttons
-// <AnswerButton index={index} answerIndex={0} />
-// <AnswerButton index={index} answerIndex={1} />
-// <AnswerButton index={index} answerIndex={2} />
-// <AnswerButton index={index} answerIndex={3} />
+// <AnswerButton questionIndex={questionIndex} answerquestionIndex={0} />
+// <AnswerButton questionIndex={questionIndex} answerquestionIndex={1} />
+// <AnswerButton questionIndex={questionIndex} answerquestionIndex={2} />
+// <AnswerButton questionIndex={questionIndex} answerquestionIndex={3} />

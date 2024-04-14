@@ -9,12 +9,12 @@ interface Props {
 }
 
 function AnswerButton({ index, answerIndex }: Props) {
-  let answers = [
-    breedDataObj[index].a,
-    breedDataObj[index].b,
-    breedDataObj[index].c,
-    breedDataObj[index].d,
-  ];
+  // let answers = [
+  //   breedDataObj[index].a,
+  //   breedDataObj[index].b,
+  //   breedDataObj[index].c,
+  //   breedDataObj[index].d,
+  // ];
   const [color, setColor] = useState("white");
   const [bgColor, setBgColor] = useState("purple");
 
@@ -61,7 +61,7 @@ function AnswerButton({ index, answerIndex }: Props) {
         style={{ backgroundColor: bgColor, color: color }}
         onClick={handleClick}
       >
-        {answers[answerIndex]}
+        {index}
       </button>
     </>
   );

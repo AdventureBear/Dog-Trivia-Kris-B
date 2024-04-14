@@ -1,0 +1,22 @@
+export const breedImageArr = [
+    "../images/1_shih_tzu.jpg",
+    "../images/2_dane.jpg",
+    "../images/3_beagle.jpg",
+    "../images/4_gsd.png",
+    "../images/5_frenchie.jpg",
+    "../images/6_berner.jpg",
+    "../images/7_westie.jpg",
+    "../images/8_corgi.jpg",
+    "../images/9_rottweiler.jpg",
+    "../images/10_pomeranian.jpg",
+    "../images/11_golden.jpg",
+    "../images/12_amstaff.jpg",
+    "../images/13_cat.jpg",
+    "../images/14_aussie.jpg",
+    "../images/15_newfie.jpg",
+    "../images/16_crested.jpg",
+    "../images/17_viszla.jpg",
+    "../images/18_samoyed.jpg",
+    "../images/19_basset.jpeg",
+    "../images/20_dalmatian.jpg"
+  ]

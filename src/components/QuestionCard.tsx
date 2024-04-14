@@ -8,23 +8,23 @@ import PreviousButton from "./PreviousButton.js";
 function QuestionCard() {
   // const handleSelectedItem = (item: string) => console.log(item);
 
-  const [index, setIndex] = useState(0);
+  const [questionIndex, setquestionIndex] = useState(0);
 
-  const incrementIndex = () => {
-    setIndex(index + 1);
+  const incrementquestionIndex = () => {
+    setquestionIndex(questionIndex + 1);
   };
 
-  const decrementIndex = () => {
-    setIndex(index - 1);
+  const decrementquestionIndex = () => {
+    setquestionIndex(questionIndex - 1);
   };
 
   return (
     <div className="d-flex justify-content-center p-2">
       <Card style={{ width: "30rem" }}>
         <CardImg
-          src={breedDataObj[index].imagePath}
+          src={breedDataObj[questionIndex].imagePath}
           alt="image"
-          style={{ width: "100%" }}
+          style={{ width: "100%", height: "300px" }}
         />
 
         <CardBody>
@@ -34,14 +34,14 @@ function QuestionCard() {
         </CardBody>
         <CardBody>
           <div>
-            <AnswerButtonGroup index={index} />
+            <AnswerButtonGroup questionIndex={questionIndex} />
           </div>
         </CardBody>
 
         <CardBody>
-          <PreviousButton onClick={() => decrementIndex()} />
-          <span>Question #{breedDataObj[index].questionId}</span>
-          <NextButton onClick={() => incrementIndex()} />
+          <PreviousButton onClick={() => decrementquestionIndex()} />
+          <span>Question #{breedDataObj[questionIndex].questionId}</span>
+          <NextButton onClick={() => incrementquestionIndex()} />
         </CardBody>
       </Card>
     </div>

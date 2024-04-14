@@ -4,7 +4,7 @@
 }
 
 .btn-group button {
-    margin: 2px 5px 2px 5px;
-    width: 150px;
-    margin-left: auto;
+    margin: 2px auto 2px auto;
+    width: 225px;
+    /* margin-left: auto; */
 }
