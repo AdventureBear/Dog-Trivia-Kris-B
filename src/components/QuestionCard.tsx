@@ -1,3 +1,4 @@
+import "../styles/QuestionCard.css";
 import { Card, CardBody, CardImg } from "reactstrap";
 import { breedDataObj } from "../data/gameData.js";
 import { useState } from "react";

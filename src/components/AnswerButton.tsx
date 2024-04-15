@@ -1,48 +1,44 @@
+import "../styles/AnswerButton.css";
 import { breedDataObj } from "../data/gameData";
 import { useEffect, useState } from "react";
 
 // try adding useEffect to reset the button when the QUESTION index changes
 
 interface Props {
-  index: number;
+  disabled: boolean;
+  questionIndex: number;
   answerIndex: number;
+  answered: (answered: boolean) => void;
 }
 
-function AnswerButton({ index, answerIndex }: Props) {
-  // let answers = [
-  //   breedDataObj[index].a,
-  //   breedDataObj[index].b,
-  //   breedDataObj[index].c,
-  //   breedDataObj[index].d,
-  // ];
+function AnswerButton({
+  disabled,
+  questionIndex,
+  answerIndex,
+  answered,
+}: Props) {
+  let answers = [
+    breedDataObj[questionIndex].a,
+    breedDataObj[questionIndex].b,
+    breedDataObj[questionIndex].c,
+    breedDataObj[questionIndex].d,
+  ];
   const [color, setColor] = useState("white");
   const [bgColor, setBgColor] = useState("purple");
-
-  const [isButtonDisabled, setButtonDisabled] = useState(false);
 
   // when index changes reset button colors
   useEffect(() => {
     setBgColor("purple");
     setColor("white");
-  }, [index]);
-
-  useEffect(() => {
-    setButtonDisabled(false);
-  }, [index]);
+  }, [questionIndex]);
 
   const handleClick = (evt: any) => {
     let selectedBreedName = "";
     let correctBreedName = "";
     let isCorrect = true;
 
-    const disableButton = () => {
-      setButtonDisabled(true);
-    };
-
-    console.log(evt);
-
     selectedBreedName = evt.target.innerText;
-    correctBreedName = breedDataObj[index].breedName;
+    correctBreedName = breedDataObj[questionIndex].breedName;
 
     selectedBreedName === correctBreedName
       ? (isCorrect = true)
@@ -51,17 +47,18 @@ function AnswerButton({ index, answerIndex }: Props) {
     setBgColor(isCorrect ? "#33FF00" : "#FF3300"); // green / red
     setColor(isCorrect ? "#336600" : "#990000"); // dark green / dark red
 
-    disableButton();
+    answered(true);
   };
 
   return (
     <>
       <button
-        disabled={isButtonDisabled}
+        className="answerButton"
+        disabled={disabled}
         style={{ backgroundColor: bgColor, color: color }}
         onClick={handleClick}
       >
-        {index}
+        {answers[answerIndex]}
       </button>
     </>
   );
