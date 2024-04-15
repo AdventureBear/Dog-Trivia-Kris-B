@@ -36,6 +36,7 @@ function AnswerButton({
     let selectedBreedName = "";
     let correctBreedName = "";
     let isCorrect = true;
+    let score = 0;
 
     selectedBreedName = evt.target.innerText;
     correctBreedName = breedDataObj[questionIndex].breedName;
@@ -48,6 +49,16 @@ function AnswerButton({
     // setColor(isCorrect ? "#336600" : "#990000"); // dark green / dark red
 
     answered(true);
+
+    function keepScore() {
+      if (isCorrect) {
+        return (score += 1);
+      }
+    }
+
+    keepScore();
+
+    console.log("Score: " + score);
   };
 
   return (
@@ -55,7 +66,11 @@ function AnswerButton({
       <button
         className="answerButton"
         disabled={disabled}
-        style={{ backgroundColor: bgColor }}
+        style={
+          disabled
+            ? { backgroundColor: bgColor, opacity: 0.7 }
+            : { backgroundColor: bgColor }
+        }
         onClick={handleClick}
       >
         {answers[answerIndex]}
