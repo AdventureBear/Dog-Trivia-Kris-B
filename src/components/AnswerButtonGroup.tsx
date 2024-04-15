@@ -101,7 +101,7 @@ function AnswerButtonGroup({ questionIndex }: Props) {
 export default AnswerButtonGroup;
 
 // option 2 - individual component buttons
-// <AnswerButton questionIndex={questionIndex} answerquestionIndex={0} />
-// <AnswerButton questionIndex={questionIndex} answerquestionIndex={1} />
-// <AnswerButton questionIndex={questionIndex} answerquestionIndex={2} />
-// <AnswerButton questionIndex={questionIndex} answerquestionIndex={3} />
+// <AnswerButton questionIndex={questionIndex} answerIndex={0} />
+// <AnswerButton questionIndex={questionIndex} answerIndex={1} />
+// <AnswerButton questionIndex={questionIndex} answerIndex={2} />
+// <AnswerButton questionIndex={questionIndex} answerIndex={3} />

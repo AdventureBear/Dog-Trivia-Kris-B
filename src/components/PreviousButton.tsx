@@ -1,12 +1,13 @@
 interface Props {
+  disabled: boolean;
   onClick: () => void;
 }
 
-function PreviousButton({ onClick }: Props) {
+function PreviousButton({ disabled, onClick }: Props) {
   return (
     <>
       <button
-        disabled={false}
+        disabled={disabled}
         id="prev"
         style={{ marginRight: "50px" }}
         onClick={onClick}

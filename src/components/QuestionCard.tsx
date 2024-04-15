@@ -6,8 +6,6 @@ import NextButton from "./NextButton.js";
 import PreviousButton from "./PreviousButton.js";
 
 function QuestionCard() {
-  // const handleSelectedItem = (item: string) => console.log(item);
-
   const [questionIndex, setquestionIndex] = useState(0);
 
   const incrementquestionIndex = () => {
@@ -39,9 +37,15 @@ function QuestionCard() {
         </CardBody>
 
         <CardBody>
-          <PreviousButton onClick={() => decrementquestionIndex()} />
+          <PreviousButton
+            disabled={questionIndex === 0}
+            onClick={() => decrementquestionIndex()}
+          />
           <span>Question #{breedDataObj[questionIndex].questionId}</span>
-          <NextButton onClick={() => incrementquestionIndex()} />
+          <NextButton
+            disabled={questionIndex === breedDataObj.length - 1}
+            onClick={() => incrementquestionIndex()}
+          />
         </CardBody>
       </Card>
     </div>
