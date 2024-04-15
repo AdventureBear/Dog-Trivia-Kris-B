@@ -23,13 +23,13 @@ function AnswerButton({
     breedDataObj[questionIndex].c,
     breedDataObj[questionIndex].d,
   ];
-  const [color, setColor] = useState("white");
+  // const [color, setColor] = useState("white");
   const [bgColor, setBgColor] = useState("purple");
 
   // when index changes reset button colors
   useEffect(() => {
     setBgColor("purple");
-    setColor("white");
+    // setColor("white");
   }, [questionIndex]);
 
   const handleClick = (evt: any) => {
@@ -44,8 +44,8 @@ function AnswerButton({
       ? (isCorrect = true)
       : (isCorrect = false);
 
-    setBgColor(isCorrect ? "#33FF00" : "#FF3300"); // green / red
-    setColor(isCorrect ? "#336600" : "#990000"); // dark green / dark red
+    setBgColor(isCorrect ? "green" : "red"); // green / red
+    // setColor(isCorrect ? "#336600" : "#990000"); // dark green / dark red
 
     answered(true);
   };
@@ -55,7 +55,7 @@ function AnswerButton({
       <button
         className="answerButton"
         disabled={disabled}
-        style={{ backgroundColor: bgColor, color: color }}
+        style={{ backgroundColor: bgColor }}
         onClick={handleClick}
       >
         {answers[answerIndex]}

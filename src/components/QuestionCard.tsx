@@ -5,48 +5,62 @@ import { useState } from "react";
 import AnswerButtonGroup from "./AnswerButtonGroup.jsx";
 import NextButton from "./NextButton.js";
 import PreviousButton from "./PreviousButton.js";
+import ResetButton from "./ResetButton.js";
 
 function QuestionCard() {
   const [questionIndex, setquestionIndex] = useState(0);
 
-  const incrementquestionIndex = () => {
+  const incrementQuestionIndex = () => {
     setquestionIndex(questionIndex + 1);
   };
 
-  const decrementquestionIndex = () => {
+  const decrementQuestionIndex = () => {
     setquestionIndex(questionIndex - 1);
+  };
+
+  const resetQuestionIndex = () => {
+    setquestionIndex(0);
   };
 
   return (
     <div className="d-flex justify-content-center p-2">
-      <Card style={{ width: "30rem" }}>
+      <Card className="main-card">
         <CardImg
+          className="card-image"
           src={breedDataObj[questionIndex].imagePath}
           alt="image"
-          style={{ width: "100%", height: "300px" }}
         />
 
-        <CardBody>
+        <CardBody className="text-center" id="ntbTextSection">
           <p className="card-text">
             What is the name of the dog breed pictured above?
           </p>
         </CardBody>
-        <CardBody>
+        <CardBody id="answerButtonSection">
           <div>
             <AnswerButtonGroup questionIndex={questionIndex} />
           </div>
         </CardBody>
 
-        <CardBody>
+        <CardBody className="d-flex justify-content-between" id="navSection">
           <PreviousButton
-            disabled={questionIndex === 0}
-            onClick={() => decrementquestionIndex()}
+            disabled={
+              questionIndex === 0 || questionIndex === breedDataObj.length - 1
+            }
+            onClick={() => decrementQuestionIndex()}
           />
           <span>Question #{breedDataObj[questionIndex].questionId}</span>
-          <NextButton
-            disabled={questionIndex === breedDataObj.length - 1}
-            onClick={() => incrementquestionIndex()}
-          />
+          {questionIndex !== breedDataObj.length - 1 ? (
+            <NextButton
+              disabled={questionIndex === breedDataObj.length - 1}
+              onClick={() => incrementQuestionIndex()}
+            />
+          ) : (
+            <ResetButton
+              disabled={questionIndex !== breedDataObj.length - 1}
+              onClick={() => resetQuestionIndex()}
+            />
+          )}
         </CardBody>
       </Card>
     </div>

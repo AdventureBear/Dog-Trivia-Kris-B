@@ -1,3 +1,50 @@
-.questionCardBody {
-    border: 1px solid black;
+.main-card {
+    width: 30rem;
+}
+
+.card-image {
+    width: 100%;
+    height: 300px;
+}
+
+#ntbTextSection, #navSection {
+    background-color: #ECDAEC;
+    border: 1px solid #60308c;
+}
+
+#answerButtonSection {
+    border-right: 1px solid #60308c;
+    border-left: 1px solid #60308c;
+}
+
+/* #ntbTextSection, #answerButtonSection, #navSection {
+    border: 1px solid #60308c;
+} */
+
+.card-text {
+    color: #60308c;
+    font-weight: 500;
+    font-size: large;
+}
+
+span {
+    color: #60308c;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#navSection button:disabled {
+    border: none;
+    background-color: #ECDAEC;
+    color: #ECDAEC;
+    width: 7rem;
+    text-align: center;
+}
+
+#navSection button:not(:disabled) {
+    border: none;
+    width: 7rem;
+    background-color: #800051;
+    color: white;
+    text-align:center;
 }
