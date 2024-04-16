@@ -21,6 +21,7 @@ function QuestionCard() {
 
   const resetQuestionIndex = () => {
     setquestionIndex(0);
+    setScore(0);
   };
 
   const getScore = () => {

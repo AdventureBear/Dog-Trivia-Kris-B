@@ -52,3 +52,7 @@ span {
     text-align:center;
     font-size: large;
 }
+
+#navSection {
+    padding: 0.25rem;
+}
