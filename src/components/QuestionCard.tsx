@@ -59,7 +59,7 @@ function QuestionCard() {
           />
           <div>
             <span>Question #{breedDataObj[questionIndex].questionId}</span>
-            <div id="score">🐶Score{score}/20🐶</div>
+            <div id="score">🐶Score {score}/20🐶</div>
           </div>
           {questionIndex !== breedDataObj.length - 1 ? (
             <NextButton
