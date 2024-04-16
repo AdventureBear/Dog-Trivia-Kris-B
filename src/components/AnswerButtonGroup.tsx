@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import AnswerButton from "./AnswerButton";
 
 interface Props {
+  scored: () => void;
   questionIndex: number;
 }
 
-function AnswerButtonGroup({ questionIndex }: Props) {
+function AnswerButtonGroup({ questionIndex, scored }: Props) {
   const [isAnswered, setIsAnswered] = useState(false);
 
   useEffect(() => {
@@ -20,24 +21,28 @@ function AnswerButtonGroup({ questionIndex }: Props) {
   return (
     <div className="container" id="AnswerButtonGroup">
       <AnswerButton
+        scored={() => scored()}
         disabled={isAnswered}
-        answered={() => onAnswer()}
+        answered={() => scored()}
         questionIndex={questionIndex}
         answerIndex={0}
       />
       <AnswerButton
+        scored={() => scored()}
         disabled={isAnswered}
         answered={() => onAnswer()}
         questionIndex={questionIndex}
         answerIndex={1}
       />
       <AnswerButton
+        scored={() => scored()}
         disabled={isAnswered}
         answered={() => onAnswer()}
         questionIndex={questionIndex}
         answerIndex={2}
       />
       <AnswerButton
+        scored={() => scored()}
         disabled={isAnswered}
         answered={() => onAnswer()}
         questionIndex={questionIndex}

@@ -17,10 +17,6 @@
     border-left: 1px solid #60308c;
 }
 
-/* #ntbTextSection, #answerButtonSection, #navSection {
-    border: 1px solid #60308c;
-} */
-
 .card-text {
     color: #60308c;
     font-weight: 500;
@@ -33,18 +29,26 @@ span {
     font-size: x-large;
 }
 
+#score {
+    color: #60308c;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
 #navSection button:disabled {
     border: none;
     background-color: #ECDAEC;
     color: #ECDAEC;
-    width: 7rem;
+    width: 8rem;
     text-align: center;
 }
 
 #navSection button:not(:disabled) {
     border: none;
-    width: 7rem;
+    width: 8rem;
     background-color: #800051;
     color: white;
     text-align:center;
+    font-size: large;
 }

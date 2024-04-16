@@ -9,6 +9,7 @@ import ResetButton from "./ResetButton.js";
 
 function QuestionCard() {
   const [questionIndex, setquestionIndex] = useState(0);
+  const [score, setScore] = useState(0);
 
   const incrementQuestionIndex = () => {
     setquestionIndex(questionIndex + 1);
@@ -22,15 +23,18 @@ function QuestionCard() {
     setquestionIndex(0);
   };
 
+  const getScore = () => {
+    setScore(score + 1);
+  };
+
   return (
-    <div className="d-flex justify-content-center p-2">
+    <div className="d-flex justify-content-center">
       <Card className="main-card">
         <CardImg
           className="card-image"
           src={breedDataObj[questionIndex].imagePath}
           alt="image"
         />
-
         <CardBody className="text-center" id="ntbTextSection">
           <p className="card-text">
             What is the name of the dog breed pictured above?
@@ -38,7 +42,10 @@ function QuestionCard() {
         </CardBody>
         <CardBody id="answerButtonSection">
           <div>
-            <AnswerButtonGroup questionIndex={questionIndex} />
+            <AnswerButtonGroup
+              scored={() => getScore()}
+              questionIndex={questionIndex}
+            />
           </div>
         </CardBody>
 
@@ -49,7 +56,10 @@ function QuestionCard() {
             }
             onClick={() => decrementQuestionIndex()}
           />
-          <span>Question #{breedDataObj[questionIndex].questionId}</span>
+          <div>
+            <span>Question #{breedDataObj[questionIndex].questionId}</span>
+            <div id="score">🐶Score{score}/20🐶</div>
+          </div>
           {questionIndex !== breedDataObj.length - 1 ? (
             <NextButton
               disabled={questionIndex === breedDataObj.length - 1}
