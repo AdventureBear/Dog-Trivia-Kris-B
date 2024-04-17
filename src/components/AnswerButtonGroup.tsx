@@ -23,7 +23,7 @@ function AnswerButtonGroup({ questionIndex, scored }: Props) {
       <AnswerButton
         scored={() => scored()}
         disabled={isAnswered}
-        answered={() => scored()}
+        answered={() => onAnswer()}
         questionIndex={questionIndex}
         answerIndex={0}
       />
