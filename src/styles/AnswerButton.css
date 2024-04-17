@@ -1,6 +1,14 @@
 .answerButton {
-    margin: 2px auto 2px auto;
-    width: 200px;
-    height: 50px;
+    margin: 0.25rem 0.5rem 0.25rem 0.5rem;
+    width: 11rem;
+    height: 4rem;
     color: white;
 }
+
+@media screen and (max-width: 475px) {
+    .answerButton {
+      width: 15rem;
+      height: 1.5rem;
+      font-size: smaller;
+    }
+  }
