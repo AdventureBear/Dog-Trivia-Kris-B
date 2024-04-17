@@ -27,6 +27,7 @@ span {
     color: #60308c;
     font-weight: bold;
     font-size: x-large;
+    text-align: center;
 }
 
 #score {
@@ -36,12 +37,26 @@ span {
     text-align: center;
 }
 
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 500px) {
+    span {
+      font-size: large;
+    }
+  }
+
+@media screen and (max-width: 500px) {
+    #score {
+      font-size: medium;
+    }
+  }
+
 #navSection button:disabled {
     border: none;
     background-color: #ECDAEC;
     color: #ECDAEC;
     width: 8rem;
     text-align: center;
+    height: fit-content;
 }
 
 #navSection button:not(:disabled) {
@@ -51,7 +66,15 @@ span {
     color: white;
     text-align:center;
     font-size: large;
+    height: fit-content;
 }
+
+@media screen and (max-width: 500px) {
+    #navSection button {
+      font-size: medium;
+      width: 5rem;
+    }
+  }
 
 #navSection {
     padding: 0.25rem;

@@ -50,28 +50,35 @@ function QuestionCard() {
           </div>
         </CardBody>
 
-        <CardBody className="d-flex justify-content-between" id="navSection">
-          <PreviousButton
-            disabled={
-              questionIndex === 0 || questionIndex === breedDataObj.length - 1
-            }
-            onClick={() => decrementQuestionIndex()}
-          />
-          <div>
+        <CardBody
+          className="d-flex justify-content-between flex-row align-items-center"
+          id="navSection"
+        >
+          <div className="d-flex flex-column">
+            <PreviousButton
+              disabled={
+                questionIndex === 0 || questionIndex === breedDataObj.length - 1
+              }
+              onClick={() => decrementQuestionIndex()}
+            />
+          </div>
+          <div id="midCol" className="d-flex flex-column">
             <span>Question #{breedDataObj[questionIndex].questionId}</span>
             <div id="score">🐶Score {score}/20🐶</div>
           </div>
-          {questionIndex !== breedDataObj.length - 1 ? (
-            <NextButton
-              disabled={questionIndex === breedDataObj.length - 1}
-              onClick={() => incrementQuestionIndex()}
-            />
-          ) : (
-            <ResetButton
-              disabled={questionIndex !== breedDataObj.length - 1}
-              onClick={() => resetQuestionIndex()}
-            />
-          )}
+          <div className="d-flex flex-column">
+            {questionIndex !== breedDataObj.length - 1 ? (
+              <NextButton
+                disabled={questionIndex === breedDataObj.length - 1}
+                onClick={() => incrementQuestionIndex()}
+              />
+            ) : (
+              <ResetButton
+                disabled={questionIndex !== breedDataObj.length - 1}
+                onClick={() => resetQuestionIndex()}
+              />
+            )}
+          </div>
         </CardBody>
       </Card>
     </div>
