@@ -32,7 +32,6 @@ function shuffleArray(ans) {
         "Austrialian Terrier",
         "Australian Kelpie",
         "Cairn Terrier",
-        "Patterdale Terrier",
         "Chihuahua",
         "Cocker Spaniel",
         "Irish Setter",
@@ -74,7 +73,6 @@ function shuffleArray(ans) {
         "Bluetick Coonhound",
         "Komondor",
         "Scottish Deerhound",
-        "Collie",
         "Pug",
         "Bullmastiff",
         "Plott",
@@ -95,7 +93,6 @@ function shuffleArray(ans) {
         "Norwich Terrier",
         "Kuvasz",
         "English Shepherd",
-        "Chihuahua",
         "Coton De Tulear",
         "Irish Wolfhound"
     ]
@@ -120,10 +117,8 @@ function shuffleArray(ans) {
         "Harrier",
         "Australian Cattle Dog",
         "Irish Terrier",
-        "Poodle",
         "Tibetan Mastiff",
         "Glen of Imaal Terrier",
-        "Dachshund",
         "Thai Ridgeback",
         "Spanish Water Dog",
         "Schipperke",
@@ -149,7 +144,6 @@ function shuffleArray(ans) {
         "Briard",
         "American Bully",
         "American Eskimo Dog",
-        "Bull Terrier",
         "Bouvier des Flandres",
         "Clumber Spaniel"
     ]
