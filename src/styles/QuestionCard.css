@@ -1,5 +1,7 @@
 .main-card {
     width: 30rem;
+    padding-top: 1rem;
+    --bs-border-width: none;
 }
 
 @media screen and (max-width: 300px) {
