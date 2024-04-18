@@ -24,7 +24,7 @@ function QuestionCard() {
     setScore(0);
   };
 
-  const getScore = () => {
+  const updateScore = () => {
     setScore(score + 1);
   };
 
@@ -42,9 +42,9 @@ function QuestionCard() {
           </p>
         </CardBody>
         <CardBody id="answerButtonSection">
-          <div>
+          <div style={{ visibility: "visible" }}>
             <AnswerButtonGroup
-              scored={() => getScore()}
+              updateScore={() => updateScore()} // callback passed to AnswerButtonGroup then to AnswerButton
               questionIndex={questionIndex}
             />
           </div>

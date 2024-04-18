@@ -2,18 +2,16 @@ import "../styles/AnswerButton.css";
 import { breedDataObj } from "../data/gameData";
 import { useEffect, useState } from "react";
 
-// try adding useEffect to reset the button when the QUESTION index changes
-
 interface Props {
-  scored: () => void;
+  updateScore: () => void;
   disabled: boolean;
   questionIndex: number;
   answerIndex: number;
-  answered: (answered: boolean) => void;
+  answered: () => void;
 }
 
 function AnswerButton({
-  scored,
+  updateScore,
   disabled,
   questionIndex,
   answerIndex,
@@ -28,7 +26,8 @@ function AnswerButton({
 
   const [bgColor, setBgColor] = useState("purple");
 
-  // when index changes reset button colors
+  // reset the bgColor state back to initial color
+  // when questionIndex changes
   useEffect(() => {
     setBgColor("purple");
   }, [questionIndex]);
@@ -45,13 +44,17 @@ function AnswerButton({
       ? (isCorrect = true)
       : (isCorrect = false);
 
+    // only call updateScore if the answer is correct
     if (isCorrect) {
-      scored();
+      updateScore(); // triggers updateScore func in grandparent
     }
 
-    setBgColor(isCorrect ? "green" : "red"); // green / red
+    // change background color according to correct/incorrect answer
+    setBgColor(isCorrect ? "green" : "red");
 
-    answered(true);
+    // question is answered when any AnswerButton is clicked
+    // triggers onAnswered func in parent
+    answered();
   };
 
   return (

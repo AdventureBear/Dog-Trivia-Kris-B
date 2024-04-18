@@ -72,7 +72,7 @@ span {
     border: none;
     background-color: #ECDAEC;
     color: #ECDAEC;
-    width: 5rem;
+    width: 8rem;
     text-align: center;
     height: fit-content;
 }
@@ -88,23 +88,18 @@ span {
 }
 
 @media screen and (max-width: 500px) {
-    #navSection button:not(:disabled) {
+    #navSection button:not(:disabled), #navSection button:disabled {
       font-size: medium;
       width: 7rem;
     }
   }
 
   @media screen and (max-width: 400px) {
-    #navSection button:not(:disabled) {
-      font-size: small;
-      width: 6rem;
-    }
-  }
-
-  @media screen and (max-width: 355px) {
-    #navSection button:not(:disabled) {
+    #navSection button:not(:disabled), #navSection button:disabled {
       font-size: small;
       width: 5.7rem;
+      padding-inline-end: 4px;
+      padding-inline-start: 4px;
     }
   }
 
