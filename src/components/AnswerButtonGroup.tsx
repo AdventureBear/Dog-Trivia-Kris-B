@@ -1,57 +1,37 @@
 import "../styles/AnswerButtonGroup.css";
-import { useEffect, useState } from "react";
 import AnswerButton from "./AnswerButton";
 
 interface Props {
-  updateScore: () => void;
   questionIndex: number;
+  isAnswered: boolean
+    onAnswerClick: (option: number)=>void
+    options: string[],
+    correctAnswerButton: number
+
 }
 
-function AnswerButtonGroup({ questionIndex, updateScore }: Props) {
-  const [isAnswered, setIsAnswered] = useState(false);
+function AnswerButtonGroup({ questionIndex, onAnswerClick, options, isAnswered, correctAnswerButton }: Props) {
 
-  // reset the isAnswered state back to false to toggle disabled property
-  // when questionIndex changes
-  useEffect(() => {
-    setIsAnswered(false);
-  }, [questionIndex]);
+  const buttons = []
+    for (let i=0; i<4; i++ ){
 
-  // once question is answered (AnswerButton clicked) change isAnswered state
-  // to trigger disabled property
-  const onAnswer = () => {
-    setIsAnswered(true);
-  };
+        buttons.push(
+            <AnswerButton
+                isAnswered={isAnswered}
+                onAnswerClick ={onAnswerClick}
+                key={i}
+                answer={options[i]}
+                correctAnswerButton = {correctAnswerButton}
+                questionIndex={questionIndex}
+                answerIndex={i}
+            />
+        )
+    }
+
 
   return (
     <div className="container" id="AnswerButtonGroup">
-      <AnswerButton
-        updateScore={() => updateScore()}
-        disabled={isAnswered}
-        answered={() => onAnswer()} // callback passed to AnswerButton
-        questionIndex={questionIndex}
-        answerIndex={0}
-      />
-      <AnswerButton
-        updateScore={() => updateScore()}
-        disabled={isAnswered}
-        answered={() => onAnswer()}
-        questionIndex={questionIndex}
-        answerIndex={1}
-      />
-      <AnswerButton
-        updateScore={() => updateScore()}
-        disabled={isAnswered}
-        answered={() => onAnswer()}
-        questionIndex={questionIndex}
-        answerIndex={2}
-      />
-      <AnswerButton
-        updateScore={() => updateScore()}
-        disabled={isAnswered}
-        answered={() => onAnswer()}
-        questionIndex={questionIndex}
-        answerIndex={3}
-      />
+        {buttons.map(button => button)}
     </div>
   );
 }

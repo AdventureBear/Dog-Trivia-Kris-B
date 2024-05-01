@@ -1,75 +1,43 @@
 import "../styles/AnswerButton.css";
-import { breedDataObj } from "../data/gameData";
-import { useEffect, useState } from "react";
 
 interface Props {
-  updateScore: () => void;
-  disabled: boolean;
+  answer: string,
   questionIndex: number;
+  onAnswerClick: (option: number) => void
+  correctAnswerButton: number
   answerIndex: number;
-  answered: () => void;
+  isAnswered: boolean
 }
 
 function AnswerButton({
-  updateScore,
-  disabled,
-  questionIndex,
+    answer,
+  onAnswerClick,
+correctAnswerButton,
   answerIndex,
-  answered,
+    isAnswered
 }: Props) {
-  let answers = [
-    breedDataObj[questionIndex].a,
-    breedDataObj[questionIndex].b,
-    breedDataObj[questionIndex].c,
-    breedDataObj[questionIndex].d,
-  ];
 
-  const [bgColor, setBgColor] = useState("purple");
+  const isCorrect = correctAnswerButton===answerIndex
+  const bgColor = ((isAnswered)? (isCorrect ? "green": "red") : "purple");
 
-  // reset the bgColor state back to initial color
-  // when questionIndex changes
-  useEffect(() => {
-    setBgColor("purple");
-  }, [questionIndex]);
-
-  const handleClick = (evt: any) => {
-    let selectedBreedName = "";
-    let correctBreedName = "";
-    let isCorrect = true;
-
-    selectedBreedName = evt.target.innerText;
-    correctBreedName = breedDataObj[questionIndex].breedName;
-
-    selectedBreedName === correctBreedName
-      ? (isCorrect = true)
-      : (isCorrect = false);
-
-    // only call updateScore if the answer is correct
-    if (isCorrect) {
-      updateScore(); // triggers updateScore func in grandparent
-    }
-
-    // change background color according to correct/incorrect answer
-    setBgColor(isCorrect ? "green" : "red");
-
-    // question is answered when any AnswerButton is clicked
-    // triggers onAnswered func in parent
-    answered();
-  };
+  const handleClick = () => {
+    onAnswerClick(answerIndex)
+    // console.log("Clicked: ", answer)
+  }
 
   return (
     <>
       <button
         className="answerButton"
-        disabled={disabled}
+        disabled={isAnswered}
         style={
-          disabled
+          isAnswered
             ? { backgroundColor: bgColor, opacity: 0.7 }
             : { backgroundColor: bgColor }
         }
-        onClick={handleClick}
+        onClick={()=>handleClick()}
       >
-        {answers[answerIndex]}
+        {answer}
       </button>
     </>
   );
