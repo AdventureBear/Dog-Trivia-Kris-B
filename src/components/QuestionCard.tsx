@@ -1,6 +1,5 @@
 import "../styles/QuestionCard.css";
 import {Card, CardBody, CardImg} from "reactstrap";
-import {breedDataObj} from "../data/gameData.js";
 import {useState} from "react";
 import AnswerButtonGroup from "./AnswerButtonGroup.jsx";
 import NextButton from "./NextButton.js";
@@ -104,22 +103,22 @@ function QuestionCard() {
                     >
                             <PreviousButton
                                 disabled={
-                                    questionIndex === 0 || questionIndex === breedDataObj.length - 1
+                                    questionIndex === 0 || questionIndex === breedNameArr.length - 1
                                 }
                                 onClick={() => decrementQuestionIndex()}
                             />
                         <div id="midCol" className="d-flex flex-column">
-                            <span>Question #{breedDataObj[questionIndex].questionId}</span>
+                            <span>Question #{questionIndex+1}</span>
                             <div id="score">🐶Score {score}/20🐶</div>
                         </div>
-                            {questionIndex !== breedDataObj.length - 1 ? (
+                            {questionIndex !== breedNameArr.length - 1 ? (
                                 <NextButton
-                                    disabled={questionIndex === breedDataObj.length - 1}
+                                    disabled={questionIndex === breedNameArr.length - 1}
                                     onClick={() => incrementQuestionIndex()}
                                 />
                             ) : (
                                 <ResetButton
-                                    disabled={questionIndex !== breedDataObj.length - 1}
+                                    disabled={questionIndex !== breedNameArr.length - 1}
                                     onClick={() => resetQuestionIndex()}
                                 />
                             )}
